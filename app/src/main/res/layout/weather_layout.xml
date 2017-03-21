@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/blue"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:text="@string/luwei"
+        android:textSize="20sp"
+        />
+</RelativeLayout>
+
+        <RelativeLayout
+            android:background="@drawable/yuna"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            />
+            <TextView
+                android:id="@+id/current_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                />
+       </RelativeLayout>
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/publish_text"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/weather_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+                <LinearLayout
+                    android:id="@+id/hh"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                <TextView
+
+                    android:id="@+id/weather_desp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="40sp"
+                    />
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_centerVertical="true"
+                    android:id="@+id/zz"
+                    android:layout_toRightOf="@+id/hh"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/temp1"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+
+                        android:textColor="@color/white"
+                        android:text="～"
+
+                        android:gravity="center_vertical"
+
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/temp2"
+                        android:textSize="25sp"
+
+                        android:textColor="@color/white"
+
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        </RelativeLayout>
+
+</LinearLayout>

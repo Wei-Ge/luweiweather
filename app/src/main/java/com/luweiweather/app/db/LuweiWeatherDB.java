@@ -39,7 +39,7 @@ public class LuweiWeatherDB {
     * 获取LuweiWeatherDB的实例
     * */
     public synchronized static LuweiWeatherDB getInstance(Context context){
-        if (luweiWeatherDB ==null){
+        if (luweiWeatherDB == null){
             luweiWeatherDB = new LuweiWeatherDB(context);
         }
         return luweiWeatherDB;
@@ -59,7 +59,7 @@ public class LuweiWeatherDB {
     * 从数据库读取全国所有的省份信息
     * */
     public List<Province> loadProvinces(){
-        List<Province> list = new ArrayList<>();
+        List<Province> list = new ArrayList<Province>();
         Cursor cursor = db.query("Province", null, null, null, null, null, null);
         if (cursor.moveToFirst()){
             do{
