@@ -1,6 +1,7 @@
 package com.luweiweather.app.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -17,7 +18,7 @@ import com.luweiweather.app.util.Utility;
 /**
  * Created by user on 2017/3/19 0019.
  */
-public class WeatherActivity extends Activity {
+public class WeatherActivity extends Activity implements View.OnClickListener{
 
     private RelativeLayout weatherInfoLayout;
     private TextView cityNameText;
@@ -26,6 +27,7 @@ public class WeatherActivity extends Activity {
     private TextView temp1Text;
     private TextView temp2Text;
     private TextView weatherDespText;
+    private TextView switchCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,13 @@ public class WeatherActivity extends Activity {
         temp1Text = (TextView) findViewById(R.id.temp1);
         temp2Text = (TextView) findViewById(R.id.temp2);
         weatherDespText = (TextView) findViewById(R.id.weather_desp);
+        switchCity = (TextView) findViewById(R.id.switch_city);
+        switchCity.setOnClickListener(this);
+        SharedPreferences prefs  = PreferenceManager.getDefaultSharedPreferences(this);
+        String weatherCode = prefs.getString("weather_code", "");
+        if (!TextUtils.isEmpty(weatherCode)){
+            queryWeatherInfo(weatherCode);
+        }
         String countyCode = getIntent().getStringExtra("county_code");
         if (!TextUtils.isEmpty(countyCode)){
             //有县级代号时就去查询天气
@@ -102,7 +111,7 @@ public class WeatherActivity extends Activity {
         temp1Text.setText(prefs.getString("temp1",""));
         temp2Text.setText(prefs.getString("temp2",""));
         weatherDespText.setText(prefs.getString("weather_desp",""));
-        publishText.setText(prefs.getString("publish_time","")+"更新");
+        publishText.setText(prefs.getString("publish_time","")+"发布");
         currentDateText.setText(prefs.getString("current_date",""));
         cityNameText.setVisibility(View.VISIBLE);
         weatherInfoLayout.setVisibility(View.VISIBLE);
@@ -115,5 +124,20 @@ public class WeatherActivity extends Activity {
     private void queryWeatherInfo(String weatherCode) {
         String address="http://www.weather.com.cn/data/cityinfo/"+weatherCode+".html";
         queryFromServer(address,"weatherCode");
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.switch_city:
+                Intent intent = new Intent(this, ChooseAreaActivity.class);
+                intent.putExtra("from_weather_activity",true);
+                startActivity(intent);
+                finish();
+                break;
+            default:
+                break;
+
+        }
     }
 }

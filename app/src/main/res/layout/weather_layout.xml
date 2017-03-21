@@ -32,6 +32,7 @@
             >
 
        <RelativeLayout
+           android:layout_marginTop="20dp"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
 
@@ -41,10 +42,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
             android:textSize="24sp"
+            android:layout_marginRight="50dp"
             android:textColor="@color/white"
             />
+           <TextView
+               android:id="@+id/switch_city"
+               android:text="[切换]"
+               android:layout_alignParentRight="true"
+               android:layout_centerVertical="true"
+               android:layout_marginRight="10dp"
+               android:textSize="16sp"
+               android:textColor="@color/white"
+
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/current_date"
                 android:layout_width="wrap_content"
@@ -89,7 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
+                    android:textSize="18sp"
                     />
                 </LinearLayout>
                 <RelativeLayout
@@ -107,7 +120,7 @@
 
                     <TextView
                         android:id="@+id/temp1"
-                        android:textSize="25sp"
+                        android:textSize="22sp"
                         android:textColor="@color/white"
                         android:gravity="center_vertical"
                         android:layout_width="wrap_content"
@@ -117,7 +130,6 @@
 
                         android:textColor="@color/white"
                         android:text="～"
-
                         android:gravity="center_vertical"
 
                         android:layout_width="wrap_content"
